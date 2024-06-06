@@ -1,3 +1,9 @@
+import { Header } from "../components";
+
 export const Page = () => {
-  return <div>Page</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
