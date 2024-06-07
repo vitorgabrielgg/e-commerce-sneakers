@@ -22,7 +22,7 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <button type="button" className="fill-white">
+          <button type="button">
             <img src={IconCart} alt="Cart" className="w-6" />
           </button>
 

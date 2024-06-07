@@ -12,7 +12,7 @@ export default {
         light_grayish_blue: "hsl(223, 64%, 98%)",
       },
       screens: {
-        container: "1280px",
+        container: "1290px",
       },
     },
   },
