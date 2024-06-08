@@ -17,6 +17,7 @@ type StateTypes = {
   indexImg: number;
   sneakersImg: string[];
   openModal: boolean;
+  countSneakers: number;
   qtdSneakers: number;
 };
 
@@ -31,6 +32,7 @@ const initialState = {
   indexImg: 0,
   sneakersImg: arrSneakers,
   openModal: false,
+  countSneakers: 0,
   qtdSneakers: qtdLocalStorage ? JSON.parse(qtdLocalStorage) : 0,
 };
 
@@ -63,7 +65,27 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
     case sneakerActionTypes.CLICK_INDEX:
       return {
         ...state,
-        indexImg: action.payload.qtd,
+        indexImg: action.payload.index,
+      };
+
+    case sneakerActionTypes.SET_QTD_SNEAKERS:
+      localStorage.setItem("qtd", JSON.stringify(action.payload.qtd));
+      return {
+        ...state,
+        qtdSneakers: action.payload.qtd,
+        countSneakers: 0,
+      };
+
+    case sneakerActionTypes.INCREASE_COUNT_SNEAKERS:
+      return {
+        ...state,
+        countSneakers: state.countSneakers++,
+      };
+
+    case sneakerActionTypes.DECREASE_COUNT_SNEAKERS:
+      return {
+        ...state,
+        countSneakers: state.countSneakers--,
       };
 
     default:

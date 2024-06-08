@@ -4,7 +4,8 @@ import { sneakerActionTypes } from "../../context/Sneaker/action-types";
 
 export const useSneaker = () => {
   const { state, dispatch } = useContext(SneakerContext);
-  const { indexImg, openModal, qtdSneakers, sneakersImg } = state;
+  const { indexImg, openModal, countSneakers, qtdSneakers, sneakersImg } =
+    state;
 
   const increaseIndexImg = () => {
     dispatch({ type: sneakerActionTypes.INCREASE_INDEX, payload: {} });
@@ -14,8 +15,8 @@ export const useSneaker = () => {
     dispatch({ type: sneakerActionTypes.DECREASE_INDEX, payload: {} });
   };
 
-  const changeIndexWithClick = (qtd: number) => {
-    dispatch({ type: sneakerActionTypes.CLICK_INDEX, payload: { qtd } });
+  const changeIndexWithClick = (index: number) => {
+    dispatch({ type: sneakerActionTypes.CLICK_INDEX, payload: { index } });
   };
 
   const sneakerImg = sneakersImg[indexImg];
@@ -24,7 +25,9 @@ export const useSneaker = () => {
     indexImg,
     openModal,
     qtdSneakers,
+    countSneakers,
     sneakerImg,
+    dispatch,
     increaseIndexImg,
     decreaseIndexImg,
     changeIndexWithClick,
