@@ -19,6 +19,7 @@ type StateTypes = {
   openModal: boolean;
   countSneakers: number;
   qtdSneakers: number;
+  isCartOpen: boolean;
 };
 
 type ActionTypes = {
@@ -34,6 +35,7 @@ const initialState = {
   openModal: false,
   countSneakers: 0,
   qtdSneakers: qtdLocalStorage ? JSON.parse(qtdLocalStorage) : 0,
+  isCartOpen: false,
 };
 
 type ContextProps = {
@@ -86,6 +88,19 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
       return {
         ...state,
         countSneakers: state.countSneakers--,
+      };
+
+    case sneakerActionTypes.CHANGE_STATE_CART_COMPONENT:
+      return {
+        ...state,
+        isCartOpen: !state.isCartOpen,
+      };
+
+    case sneakerActionTypes.DELETE_QTD_SNEAKERS:
+      localStorage.setItem("qtd", JSON.stringify(0));
+      return {
+        ...state,
+        qtdSneakers: 0,
       };
 
     default:

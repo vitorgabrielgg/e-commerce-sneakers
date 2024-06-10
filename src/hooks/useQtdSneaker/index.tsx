@@ -22,8 +22,6 @@ export const useQtdSneaker = () => {
     });
   };
 
-  console.log(qtdSneakers);
-
   return {
     countSneakers,
     increaseQtd,

@@ -4,8 +4,14 @@ import { sneakerActionTypes } from "../../context/Sneaker/action-types";
 
 export const useSneaker = () => {
   const { state, dispatch } = useContext(SneakerContext);
-  const { indexImg, openModal, countSneakers, qtdSneakers, sneakersImg } =
-    state;
+  const {
+    indexImg,
+    openModal,
+    countSneakers,
+    qtdSneakers,
+    sneakersImg,
+    isCartOpen,
+  } = state;
 
   const increaseIndexImg = () => {
     dispatch({ type: sneakerActionTypes.INCREASE_INDEX, payload: {} });
@@ -19,9 +25,14 @@ export const useSneaker = () => {
     dispatch({ type: sneakerActionTypes.CLICK_INDEX, payload: { index } });
   };
 
+  const deleteSneakersCart = () => {
+    dispatch({ type: sneakerActionTypes.DELETE_QTD_SNEAKERS, payload: {} });
+  };
+
   const sneakerImg = sneakersImg[indexImg];
 
   return {
+    isCartOpen,
     indexImg,
     openModal,
     qtdSneakers,
@@ -31,5 +42,6 @@ export const useSneaker = () => {
     increaseIndexImg,
     decreaseIndexImg,
     changeIndexWithClick,
+    deleteSneakersCart,
   };
 };
