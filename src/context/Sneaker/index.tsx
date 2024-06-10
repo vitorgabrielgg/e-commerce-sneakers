@@ -103,6 +103,13 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
         qtdSneakers: 0,
       };
 
+    case sneakerActionTypes.CHANGE_STATE_MODAL: {
+      return {
+        ...state,
+        openModal: !state.openModal,
+      };
+    }
+
     default:
       return state;
   }

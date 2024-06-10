@@ -7,17 +7,17 @@ import { useSneaker } from "../../hooks";
 
 const arrThumbs = [Sneaker1Thumb, Sneaker2Thumb, Sneaker3Thumb, Sneaker4Thumb];
 
-export const SneakersThumbmails = () => {
+export const SneakersThumbmails = ({ className }: { className?: string }) => {
   const { changeIndexWithClick, indexImg } = useSneaker();
 
   return (
-    <div className="hidden md:grid grid-cols-4 gap-6 mt-6">
+    <div className={`hidden md:grid grid-cols-4 gap-6 mt-6 ${className}`}>
       {arrThumbs.map((item, i) => (
         <div
           key={i}
           className={`${
             indexImg === i && "rounded-xl border-[3px] border-orange_color"
-          }  cursor-pointer bg-white group`}
+          }  cursor-pointer bg-white rounded-xl group`}
           onClick={() => changeIndexWithClick(i)}
         >
           <img
