@@ -7,6 +7,7 @@ export const useSneaker = () => {
   const {
     indexImg,
     openModal,
+    openMenu,
     countSneakers,
     qtdSneakers,
     sneakersImg,
@@ -35,6 +36,7 @@ export const useSneaker = () => {
     isCartOpen,
     indexImg,
     openModal,
+    openMenu,
     qtdSneakers,
     countSneakers,
     sneakerImg,

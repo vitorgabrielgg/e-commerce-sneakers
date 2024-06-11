@@ -17,6 +17,7 @@ type StateTypes = {
   indexImg: number;
   sneakersImg: string[];
   openModal: boolean;
+  openMenu: boolean;
   countSneakers: number;
   qtdSneakers: number;
   isCartOpen: boolean;
@@ -33,6 +34,7 @@ const initialState = {
   indexImg: 0,
   sneakersImg: arrSneakers,
   openModal: false,
+  openMenu: false,
   countSneakers: 0,
   qtdSneakers: qtdLocalStorage ? JSON.parse(qtdLocalStorage) : 0,
   isCartOpen: false,
@@ -109,6 +111,12 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
         openModal: !state.openModal,
       };
     }
+
+    case sneakerActionTypes.CHANGE_STATE_MENU:
+      return {
+        ...state,
+        openMenu: !state.openMenu,
+      };
 
     default:
       return state;

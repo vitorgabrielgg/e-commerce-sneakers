@@ -6,6 +6,7 @@ import { Button } from "../index";
 
 export const SneakersInfo = () => {
   const { addSneakersToCart } = useQtdSneaker();
+
   return (
     <section className="md:w-2/4">
       <div className="px-6 md:px-8 lg:px-10 xl:px-12 md:pt-4 lg:pt-12 space-y-2 md:space-y-4">
@@ -37,10 +38,7 @@ export const SneakersInfo = () => {
 
         <div className="flex flex-col md:flex-row gap-4 pt-4 pb-28 xl:pr-14">
           <QtdCountSneakers />
-          <div
-            className="md:w-[60%] xl:w-[65%]"
-            onClick={() => addSneakersToCart()}
-          >
+          <div className="md:w-[60%] xl:w-[65%]" onClick={addSneakersToCart}>
             <Button>
               <img src={IconCart} alt="" />
               <p className="font-bold text-very_dark_blue">Add to cart</p>

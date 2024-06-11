@@ -8,4 +8,5 @@ export const sneakerActionTypes = {
   DECREASE_COUNT_SNEAKERS: "decrease/countSneakers",
   CHANGE_STATE_CART_COMPONENT: "change/stateCartComponent",
   CHANGE_STATE_MODAL: "change/stateModal",
+  CHANGE_STATE_MENU: "change/stateMenu",
 };

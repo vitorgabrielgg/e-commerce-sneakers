@@ -15,7 +15,7 @@ export const CartCard = () => {
 
   return (
     <div
-      className={`absolute top-14 md:top-14 lg:top-16 max-w-[360px] w-screen -right-4 container:right-0 bg-white z-20 rounded-lg shadow-2xl ${
+      className={`absolute top-14 md:top-14 lg:top-16 max-w-[360px] w-screen -right-4 container:right-0 bg-white z-10 rounded-lg shadow-2xl ${
         isCartOpen
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
