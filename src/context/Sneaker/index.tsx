@@ -57,13 +57,13 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
     case sneakerActionTypes.INCREASE_INDEX:
       return {
         ...state,
-        indexImg: state.indexImg >= 4 ? 0 : state.indexImg++,
+        indexImg: state.indexImg >= 3 ? 0 : state.indexImg + 1,
       };
 
     case sneakerActionTypes.DECREASE_INDEX:
       return {
         ...state,
-        indexImg: state.indexImg <= -1 ? 3 : state.indexImg--,
+        indexImg: state.indexImg <= 0 ? 3 : state.indexImg - 1,
       };
 
     case sneakerActionTypes.CLICK_INDEX:
@@ -83,13 +83,13 @@ const sneakerReducer = (state: StateTypes, action: ActionTypes) => {
     case sneakerActionTypes.INCREASE_COUNT_SNEAKERS:
       return {
         ...state,
-        countSneakers: state.countSneakers++,
+        countSneakers: state.countSneakers + 1,
       };
 
     case sneakerActionTypes.DECREASE_COUNT_SNEAKERS:
       return {
         ...state,
-        countSneakers: state.countSneakers--,
+        countSneakers: state.countSneakers - 1,
       };
 
     case sneakerActionTypes.CHANGE_STATE_CART_COMPONENT:
