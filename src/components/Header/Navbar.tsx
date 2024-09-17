@@ -9,7 +9,9 @@ export const Navbar = () => {
     <nav className="flex">
       <ul
         className={`${
-          openMenu ? "opacity-100" : "opacity-0"
+          openMenu
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         } flex flex-col md:opacity-100 md:flex-row gap-6 max-md:absolute max-md:bg-white max-md:z-20 max-md:top-0 max-md:left-0 max-md:min-h-screen max-md:pt-20 max-md:px-5 max-md:w-[65%] transition-all duration-300`}
       >
         {arrNavbar.map((item, i) => (
